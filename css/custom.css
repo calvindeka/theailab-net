@@ -1,0 +1,161 @@
+/* ===========================================================================
+ *  IPHS 400 CUSTOM LAYER
+ *  Everything above this line is vendored just-the-docs. Everything below is
+ *  written for this site: the page-title block, content wrapper, week
+ *  navigation, and the "current week" callout.
+ * ======================================================================== */
+
+:root {
+  --iphs-accent: #4b2e83;          /* Kenyon purple — verify against official brand */
+  --iphs-accent-soft: #f3effa;
+  --iphs-rule: #e6e1e8;
+}
+
+/* --- page title block (replaces the old .hero banner) --- */
+section.hero {
+  margin: 0 0 1.75rem;
+  padding: 0 0 0.9rem;
+  border-bottom: 1px solid var(--iphs-rule);
+}
+section.hero h1 {
+  margin: 0;
+  font-size: 1.9rem;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+section.hero .page-meta {
+  margin: 0.4rem 0 0;
+  font-size: 0.75rem;
+  color: #5c5962;
+}
+
+/* --- main content column --- */
+.page-content > * + * { margin-top: 1rem; }
+.page-content h2 {
+  margin-top: 2.2rem;
+  padding-top: 0.2rem;
+  font-size: 1.15rem;
+}
+.page-content h3 { margin-top: 1.5rem; font-size: 1rem; }
+.page-content table { display: table; width: 100%; }
+.page-content ul.item-list { padding-left: 1.1rem; }
+
+/* --- sidebar layout ---
+   just-the-docs assumes a JavaScript hamburger at narrow widths: .site-nav is
+   display:none until a script adds .nav-open. This site must work with no
+   JavaScript at all (design brief, section 4), so the sidebar is laid out as a
+   single column at every width and simply stacks above the content on small
+   screens. The theme also uses align-items:flex-end on the desktop sidebar,
+   which shrink-wraps the nav to its text width; stretch is what we want. */
+.side-bar {
+  flex-flow: column nowrap;
+  align-items: stretch;
+}
+@media (min-width: 50rem) {
+  .side-bar {
+    align-items: stretch;
+    overflow-y: auto;
+  }
+}
+/* The sidebar is a fixed-height (100%) column flex container. With 6 section
+   links plus 15 week links its content is taller than the viewport, so the
+   default flex-shrink:1 squashes the branding header and the tagline spills
+   outside its own box. Pinning every child to its natural height and letting
+   the sidebar itself scroll is the fix. */
+header.site-header,
+nav.main-nav,
+nav.week-nav {
+  flex: 0 0 auto;
+}
+nav.main-nav,
+nav.week-nav {
+  display: block;
+  width: 100%;
+}
+nav.main-nav { padding-top: 0.5rem; }
+nav.week-nav { padding-bottom: 2rem; }
+
+/* --- sidebar branding ---
+   just-the-docs locks .site-header to height:3.75rem for a single-line title.
+   This course title wraps to two lines, so the fixed height is released here.
+   `header.site-header` (0,1,1) outranks the theme's `.site-header` (0,1,0),
+   so no !important is needed except where the theme itself uses it. */
+header.site-header {
+  display: block;
+  height: auto;
+  max-height: none;
+  min-height: 0;
+  padding: 0.95rem 1rem 0.85rem;
+  border-bottom: 1px solid var(--iphs-rule);
+}
+header.site-header .site-title {
+  display: block;
+  height: auto;
+  padding: 0;
+  font-size: 0.95rem !important;   /* theme sets 1.125rem !important */
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--iphs-accent);
+}
+header.site-header .site-description {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.7rem;
+  line-height: 1.3;
+  color: #5c5962;
+}
+
+/* --- week navigation in the sidebar --- */
+.week-nav { margin-top: 0.4rem; }
+.week-nav .nav-category {
+  padding: 0.6rem 1rem 0.3rem;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #6f6b76;
+}
+.week-nav .nav-list-link { font-size: 0.78rem; }
+.week-nav .nav-list-link[aria-current="page"],
+nav.main-nav .nav-list-link[aria-current="page"] {
+  font-weight: 600;
+  color: var(--iphs-accent);
+  background-image: linear-gradient(to right, var(--iphs-accent-soft) 0%, rgba(0,0,0,0) 100%);
+}
+
+/* --- "this week" callout on the home page --- */
+.this-week {
+  margin: 0 0 1.75rem;
+  padding: 0.9rem 1.1rem;
+  border: 1px solid var(--iphs-rule);
+  border-left: 3px solid var(--iphs-accent);
+  border-radius: 3px;
+  background: #fbfafd;
+}
+.this-week .this-week-label {
+  margin: 0 0 0.35rem;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--iphs-accent);
+}
+.this-week h2 { margin: 0 0 0.3rem; font-size: 1.05rem; }
+.this-week p  { margin: 0; font-size: 0.85rem; }
+
+/* --- footer lives in the content column, not the sidebar --- */
+.main-content-wrap > .site-footer {
+  position: static;
+  margin-top: 3rem;
+  padding: 1rem 0 2rem;
+  border-top: 1px solid var(--iphs-rule);
+  font-size: 0.75rem;
+  color: #5c5962;
+}
+
+/* --- print --- */
+@media print {
+  .side-bar, .skip-to-main, .main-header { display: none !important; }
+  .main { margin-left: 0 !important; }
+  section.hero { border-bottom: 1px solid #000; }
+}

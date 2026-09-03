@@ -1,33 +1,55 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Assignments – IPHS 400: Frontiers in AI</title>
-<link href="../css/style.css" rel="stylesheet"/>
+<link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-<header class="site-header no-featured-image">
-<div class="header-inner">
-<div class="site-branding"><p class="site-title"><a href="../index.html">IPHS 400: Frontiers in AI</a></p><span class="site-sep">—</span><p class="site-description">Kenyon College — Fall 2026</p></div>
-<nav class="main-nav"><ul>
-<li><a href="../index.html">Home</a></li>
-<li><a href="syllabus.html">Syllabus</a></li>
-<li><a href="schedule.html">Schedule</a></li>
-<li><a href="assignments.html" class="active">Assignments</a></li>
-<li><a href="policies.html">Policies</a></li>
-<li><a href="about.html">About</a></li>
-</ul></nav>
+<a class="skip-to-main" href="#main-content">Skip to main content</a>
+<div class="side-bar">
+<header class="site-header">
+<a href="../index.html" class="site-title lh-tight">IPHS 400: Frontiers in AI</a>
+<span class="site-description">Kenyon College — Fall 2026</span>
+</header>
+<nav class="main-nav" aria-label="Main">
+<ul class="nav-list">
+<li class="nav-list-item"><a href="../index.html" class="nav-list-link">Home</a></li>
+<li class="nav-list-item"><a href="syllabus.html" class="nav-list-link">Syllabus</a></li>
+<li class="nav-list-item"><a href="schedule.html" class="nav-list-link">Schedule</a></li>
+<li class="nav-list-item active"><a href="assignments.html" class="nav-list-link" aria-current="page">Assignments</a></li>
+<li class="nav-list-item"><a href="policies.html" class="nav-list-link">Policies</a></li>
+<li class="nav-list-item"><a href="about.html" class="nav-list-link">About</a></li>
+</ul>
+</nav>
+<nav class="week-nav" aria-label="Weekly schedule">
+<p class="nav-category">Weeks</p>
+<ul class="nav-list">
+<li class="nav-list-item"><a href="../weeks/week-01.html" class="nav-list-link">Week 1</a></li>
+<li class="nav-list-item"><a href="../weeks/week-02.html" class="nav-list-link">Week 2</a></li>
+<li class="nav-list-item"><a href="../weeks/week-03.html" class="nav-list-link">Week 3</a></li>
+<li class="nav-list-item"><a href="../weeks/week-04.html" class="nav-list-link">Week 4</a></li>
+<li class="nav-list-item"><a href="../weeks/week-05.html" class="nav-list-link">Week 5</a></li>
+<li class="nav-list-item"><a href="../weeks/week-06.html" class="nav-list-link">Week 6</a></li>
+<li class="nav-list-item"><a href="../weeks/week-07.html" class="nav-list-link">Week 7</a></li>
+<li class="nav-list-item"><a href="../weeks/week-08.html" class="nav-list-link">Week 8</a></li>
+<li class="nav-list-item"><a href="../weeks/week-09.html" class="nav-list-link">Week 9</a></li>
+<li class="nav-list-item"><a href="../weeks/week-10.html" class="nav-list-link">Week 10</a></li>
+<li class="nav-list-item"><a href="../weeks/week-11.html" class="nav-list-link">Week 11</a></li>
+<li class="nav-list-item"><a href="../weeks/week-12.html" class="nav-list-link">Week 12</a></li>
+<li class="nav-list-item"><a href="../weeks/week-13.html" class="nav-list-link">Week 13</a></li>
+<li class="nav-list-item"><a href="../weeks/week-14.html" class="nav-list-link">Week 14</a></li>
+<li class="nav-list-item"><a href="../weeks/week-15.html" class="nav-list-link">Week 15</a></li>
+</ul>
+</nav>
 </div>
-<section class="hero"><h1>Assignments</h1></section></header>
-
-<main class="content-wrapper">
-<div class="breadcrumbs"><a href="../index.html">Home</a> » <span>Assignments</span></div>
+<div class="main" id="top">
+<div class="main-content-wrap">
+<main id="main-content" class="main-content">
+<section class="hero"><h1>Assignments</h1></section>
 <div class="page-content">
-
 <p>Four mini-projects stack on each other over the semester, followed by an original interdisciplinary Final Project. Each mini-project must include a README and a Generative AI Use Statement (see the <a href="policies.html">Policies</a> page).</p>
-
 <h2>Summary of Assignments and Weights</h2>
 <table>
 <tr><th>Assignment</th><th>Weight</th><th>Due</th></tr>
@@ -42,39 +64,31 @@
 <tr><td>Final Project (poster + code + release form)</td><td>20%</td><td>Exam period, Dec 14–18</td></tr>
 <tr><th>Total</th><th>100%</th><td></td></tr>
 </table>
-
 <p>All submissions go through Moodle, with a link to a GitHub repository that is either public or privately shared with the instructor (add the instructor's GitHub account as a collaborator). Repositories must be accessible at the deadline.</p>
-
 <h2>Mini-Project 1 — Development Environment Configuration</h2>
 <p><strong>5%, Pass/No-Pass. Due Friday, September 4.</strong></p>
 <p>Configure a professional shell/terminal environment with documented customizations (e.g., zsh + <code>.zprofile</code>/<code>.zshrc</code>, XDG base directories, a modern CLI toolkit such as <code>ripgrep</code>, <code>fzf</code>, <code>bat</code>, <code>eza</code>, <code>tmux</code>; VS Code with relevant extensions).</p>
 <p><strong>Deliverable:</strong> a GitHub dotfiles repository (public recommended for portfolio value, or privately shared) with a README documenting your configuration choices and rationale, and a <code>.gitignore</code> showing secrets hygiene. Graded pass/no-pass on completeness and documentation quality.</p>
-
 <h2>Mini-Project 2 — AI Coding Agent Configuration</h2>
 <p><strong>5%, Pass/No-Pass. Due Friday, September 25.</strong></p>
 <p><em>High-level workflow pack.</em> Package 3–5 reusable Claude Code customizations (Skills, a slash command, and/or a subagent) into a small project plugin a classmate can install. The point is to get repeated prompts out of chat and out of <code>CLAUDE.md</code> and into invocable playbooks that speed up review, status checks, and explanation.</p>
 <p><strong>Deliverable:</strong> the plugin repository plus a short (≤3 min) recorded or live demo showing both a typed <code>/command</code> and an auto-triggered Skill.</p>
-
 <h2>Mini-Project 3 — Agent Harness and Hooks</h2>
 <p><strong>10%, graded. Due Friday, October 23 (demos Tuesday, October 27).</strong></p>
 <p><em>Low-level reliability harness.</em> Add 3–5 lifecycle hooks so the agent formats, logs, injects repo state, or blocks dangerous commands whether or not the model "remembers" the rules.</p>
 <p>Requirements: at least one hook must <strong>deny</strong> a tool call (e.g., destructive <code>git</code>/<code>rm</code> commands); at least one must produce a <strong>side effect</strong> such as lint-on-write or a Stop check that verifies tests actually ran; and the harness must integrate <strong>at least one FOSS extension</strong> from the ecosystem surveyed in Week 8 (observability/usage monitoring, context-engineering utilities, session-history tools, etc.), with the choice justified in the README.</p>
 <p><strong>Deliverable:</strong> the hook configuration, a trace or log showing that the runtime (not the prompt) enforced the behavior, and a 5-minute in-class demo (Week 10) walking through the deny-hook, the side-effect hook, and the trace.</p>
-
 <h2>Mini-Project 4 — SWE/SDLC Best Practices Capstone</h2>
 <p><strong>10%, graded. Due Friday, November 20 (presentations Nov 17/19).</strong></p>
 <p>Take a real-world, high-impact, non-trivial greenfield web application (instructor-supplied, or self-scoped and instructor-approved) from ideation to a robust minimum viable product (MVP) using a complete spec-driven software development lifecycle: <strong>plan → decompose → implement → test → review</strong>, with <strong>deploy</strong> optional but strongly encouraged (e.g., GitHub Pages, Netlify, or Vercel).</p>
 <p>Use the harness you built in MP1–3. Must include at least one instance of multi-agent/subagent orchestration (parallel dispatch, isolated worktrees, or a reviewer/implementer split) and a CI check (GitHub Actions) that runs the test suite on pull requests.</p>
 <p><strong>Deliverable:</strong> the repository (spec documents, PR history, CI runs, README), plus a 5-minute in-class presentation (Week 13). Graded on process adherence, final PR/deliverable quality, and documentation.</p>
-
 <h2>Final Project</h2>
 <p><strong>20%. Due exam period, December 14–18.</strong></p>
 <p>An original interdisciplinary research project that puts the MP1–4 agent harness to work on a real research question of your choosing, applying at least one key technique from the mini-projects.</p>
 <p>A one-page proposal (question, data/sources, planned use of the harness, expected deliverable) is due <strong>Friday, November 13</strong> and must be approved by the instructor before substantial work begins. The deliverable is a professional research poster, code and data, a signed Kenyon Digital Release form, and publication to your public digital portfolio at <strong>digital.kenyon.edu/dh</strong>. This is the one place the course is not AI-maximalist: poster content, and especially the prose, must be your own high-touch human writing and must not read like AI slop.</p>
-
 <h3>Alternative Format</h3>
 <p>Students who do not wish to publish their work publicly may instead complete a <strong>3-hour written exam</strong> in lieu of the poster/portfolio requirement, covering the semester's technical and conceptual material. Exam format and logistics will be provided separately. Students choosing this option must notify the instructor by <strong>Friday, November 13 (end of Week 12)</strong>.</p>
-
 <h3>Final Project Requirements</h3>
 <ol>
 <li><strong>Proposal:</strong> One-page proposal due Friday, November 13, approved by the instructor before substantial work begins.</li>
@@ -87,7 +101,6 @@
 <li><strong>Portfolio publication:</strong> Submit the signed Kenyon Digital Release Form for publication to digital.kenyon.edu/dh, or notify the instructor by Friday, November 13 to opt into the 3-hour written exam alternative instead.</li>
 <li><strong>Moodle check:</strong> Confirm all grades, quizzes, and presentations are accurately recorded on Moodle.kenyon.edu before the end of the exam period.</li>
 </ol>
-
 <h2>Mini-Project 3 &amp; 4 Grading Rubric</h2>
 <p>Each graded mini-project (MP3, MP4) is evaluated on:</p>
 <table>
@@ -98,13 +111,13 @@
 <tr><td>Creativity and Extension</td><td>25%</td><td>Thoughtful choice and integration of a FOSS extension (MP3) or scoping and specification of the application (MP4)</td></tr>
 <tr><td>Presentation</td><td>25%</td><td>Clarity of the in-class demo (MP3, Week 10) or presentation (MP4, Week 13), including the ability to answer questions about why the harness is designed as it is</td></tr>
 </table>
-
 <p><strong>Pass/No-Pass mini-projects (MP1, MP2):</strong> Pass earns the full 5%. It requires a working, documented deliverable that meets all stated requirements, submitted on time. A No-Pass earns 0% until resubmitted; one resubmission within one week of feedback is allowed for up to full credit, at instructor discretion.</p>
-
 </div>
 </main>
 <footer class="site-footer">
 <p>IPHS 400: Frontiers in AI · Kenyon College</p>
 </footer>
+</div>
+</div>
 </body>
 </html>
