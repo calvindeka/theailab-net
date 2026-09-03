@@ -38,11 +38,25 @@ HEADER = """/*! ================================================================
 
 
 def main() -> None:
-    vendor = (CSS / "vendor" / "just-the-docs.css").read_text(encoding="utf-8")
-    custom = (CSS / "custom.css").read_text(encoding="utf-8")
-    (CSS / "style.css").write_text(HEADER + vendor + "\n" + custom, encoding="utf-8")
-    kb = (CSS / "style.css").stat().st_size / 1024
-    print(f"built css/style.css ({kb:.0f} KB)")
+    """Builds two stylesheets.
+
+    style.css       light scheme + this site's layer; always loaded.
+    style-dark.css  the theme's dark scheme + dark colour overrides; loaded
+                    only under `media="(prefers-color-scheme: dark)"`, so a
+                    reader with no JavaScript still gets whichever scheme their
+                    operating system asks for.
+    """
+    read = lambda *parts: (CSS.joinpath(*parts)).read_text(encoding="utf-8")
+    custom = read("custom.css")
+
+    (CSS / "style.css").write_text(
+        HEADER + read("vendor", "just-the-docs.css") + "\n" + custom, encoding="utf-8")
+    (CSS / "style-dark.css").write_text(
+        HEADER + read("vendor", "just-the-docs-dark.css") + "\n" + custom
+        + "\n" + read("custom-dark.css"), encoding="utf-8")
+
+    for name in ("style.css", "style-dark.css"):
+        print(f"built css/{name} ({(CSS / name).stat().st_size / 1024:.0f} KB)")
 
 
 if __name__ == "__main__":

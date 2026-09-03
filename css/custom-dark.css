@@ -1,0 +1,35 @@
+/* ===========================================================================
+ *  IPHS 400 CUSTOM LAYER — DARK
+ *  Loaded only when the dark colour scheme is active. It overrides the colours
+ *  of this site's own classes; the vendored dark stylesheet handles everything
+ *  the theme itself defines.
+ * ======================================================================== */
+
+:root {
+  --iphs-accent: #b69ce8;          /* lightened for contrast on dark ground */
+  --iphs-accent-soft: #2a2440;
+  --iphs-rule: #34333c;
+}
+
+header.site-header { border-bottom-color: var(--iphs-rule); }
+header.site-header .site-description { color: #a09daa; }
+.brand-block { background: #3a2568; }
+
+section.hero { border-bottom-color: var(--iphs-rule); }
+section.hero .page-meta { color: #a09daa; }
+
+.week-nav .nav-category { color: #a09daa; }
+.this-week { background: #232231; border-color: var(--iphs-rule); }
+.this-week-unit, .week-unit, .week-dates-inline { color: #a09daa; }
+.week-due { background: #302020; border-left-color: #c96a52; }
+.this-week-due { border-top-color: var(--iphs-rule); }
+
+.page-content ul.item-list > li { border-bottom-color: #2c2b34; }
+.main-content-wrap > .site-footer { border-top-color: var(--iphs-rule); color: #a09daa; }
+.footer-links { color: #a09daa; }
+.theme-toggle { border-color: var(--iphs-rule); color: #d8d5e0; }
+.week-heading-title { color: #a09daa; }
+.semester-table th { color: #a09daa; }
+.semester-table th, .semester-table td { border-bottom-color: #2c2b34; }
+.semester-table tr.is-today { background: var(--iphs-accent-soft); }
+.semester-table .due-meta { color: #a09daa; }

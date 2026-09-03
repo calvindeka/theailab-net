@@ -75,31 +75,58 @@ nav.week-nav {
 nav.main-nav { padding-top: 0.5rem; }
 nav.week-nav { padding-bottom: 2rem; }
 
+/* --- sidebar width ---
+   At >=66.5rem the theme widens the sidebar to calc((100% - 66.5rem)/2 + 16.5rem)
+   so it swallows the left gutter and visually centres the content column. On a
+   wide display that leaves a very large band of empty chrome. Pin it instead. */
+@media (min-width: 66.5rem) {
+  .side-bar { width: 16.5rem; min-width: 16.5rem; }
+  .side-bar + .main { margin-left: 16.5rem; }
+  /* the theme also pins this to the sidebar width; ours is not in the sidebar */
+  header.site-header { width: auto; }
+}
+
 /* --- sidebar branding ---
    just-the-docs locks .site-header to height:3.75rem for a single-line title.
-   This course title wraps to two lines, so the fixed height is released here.
-   `header.site-header` (0,1,1) outranks the theme's `.site-header` (0,1,0),
-   so no !important is needed except where the theme itself uses it. */
+   The course identity needs two lines plus a term line, so the fixed height is
+   released here. `header.site-header` (0,1,1) outranks the theme's
+   `.site-header` (0,1,0), so no !important is needed except where the theme
+   itself uses it. */
 header.site-header {
   display: block;
   height: auto;
   max-height: none;
   min-height: 0;
-  padding: 0.95rem 1rem 0.85rem;
+  padding: 0;
   border-bottom: 1px solid var(--iphs-rule);
 }
 header.site-header .site-title {
   display: block;
   height: auto;
   padding: 0;
-  font-size: 0.95rem !important;   /* theme sets 1.125rem !important */
-  font-weight: 600;
-  line-height: 1.3;
+  text-decoration: none;
+}
+.brand-block {
+  display: block;
+  padding: 0.8rem 1rem;
+  background: var(--iphs-accent);
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: 0.005em;
+}
+.brand-title {
+  display: block;
+  padding: 0.6rem 1rem 0;
   color: var(--iphs-accent);
+  font-size: 0.88rem;
+  font-weight: 600;
+  line-height: 1.25;
 }
 header.site-header .site-description {
   display: block;
-  margin-top: 0.25rem;
+  padding: 0.1rem 1rem 0.75rem;
   font-size: 0.7rem;
   line-height: 1.3;
   color: #5c5962;
@@ -143,10 +170,17 @@ nav.main-nav .nav-list-link[aria-current="page"] {
 .this-week h2 { margin: 0 0 0.3rem; font-size: 1.05rem; }
 .this-week p  { margin: 0; font-size: 0.85rem; }
 
-/* --- footer lives in the content column, not the sidebar --- */
+/* --- footer lives in the content column, not the sidebar ---
+   The theme's .site-footer is built to sit at the bottom of the sidebar:
+   position:absolute; bottom:0; left:0, width:100% narrowing to 16.5rem at
+   >=66.5rem, with 2rem side padding. Ours is the last block of the content
+   column, so every one of those has to be released here -- releasing only
+   `position` leaves a 16.5rem-wide box adrift on the right of the page. */
 .main-content-wrap > .site-footer {
   position: static;
-  margin-top: 3rem;
+  width: auto;
+  max-width: none;
+  margin: 3rem 0 0;
   padding: 1rem 0 2rem;
   border-top: 1px solid var(--iphs-rule);
   font-size: 0.75rem;
@@ -158,4 +192,183 @@ nav.main-nav .nav-list-link[aria-current="page"] {
   .side-bar, .skip-to-main, .main-header { display: none !important; }
   .main { margin-left: 0 !important; }
   section.hero { border-bottom: 1px solid #000; }
+}
+
+/* --- generated week metadata (dates, unit, pager) --- */
+.week-meta {
+  margin: 0 0 1.6rem;
+  padding: 0 0 0.9rem;
+  border-bottom: 1px solid var(--iphs-rule);
+}
+.week-meta p { margin: 0; }
+.week-dates {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+.week-unit {
+  margin-top: 0.15rem !important;
+  font-size: 0.8rem;
+  color: #5c5962;
+}
+.week-pager {
+  margin-top: 0.6rem;
+  font-size: 0.8rem;
+}
+.week-pager a { white-space: nowrap; }
+
+/* --- schedule page: session dates beside each week --- */
+.week-dates-inline {
+  margin-left: 0.4rem;
+  font-size: 0.78rem;
+  color: #6f6b76;
+}
+
+/* --- "this week" panel --- */
+.this-week h2 a { text-decoration: none; }
+.this-week h2 a:hover { text-decoration: underline; }
+.this-week-unit {
+  margin-top: 0.3rem !important;
+  font-size: 0.75rem;
+  color: #6f6b76;
+}
+
+/* --- lists: the theme's default marker sits oddly in narrow columns --- */
+.page-content ul.item-list {
+  padding-left: 0;
+  list-style: none;
+}
+.page-content ul.item-list > li {
+  padding: 0.28rem 0;
+  border-bottom: 1px solid #f0eef2;
+}
+.page-content ul.item-list > li:last-child { border-bottom: 0; }
+
+/* the theme draws its own bullet via ul > li::before; suppress it where we
+   render a bordered row list instead */
+.page-content ul.item-list > li::before { content: none; }
+
+/* --- deadlines --- */
+.week-due {
+  margin: 0.7rem 0 0 !important;
+  padding: 0.55rem 0.75rem;
+  list-style: none;
+  border-left: 3px solid #b5452f;
+  background: #fdf5f3;
+  font-size: 0.82rem;
+}
+.week-due > li::before { content: none; }
+.this-week-due {
+  margin-top: 0.5rem !important;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--iphs-rule);
+  font-size: 0.82rem;
+}
+
+/* --- footer --- */
+.footer-links {
+  margin-top: 0.3rem !important;
+  font-size: 0.72rem;
+  color: #6f6b76;
+}
+
+/* --- colour-scheme toggle ---
+   Progressive enhancement only. The dark stylesheet is linked with
+   media="(prefers-color-scheme: dark)", so with JavaScript disabled a reader
+   still gets whichever scheme their OS asks for; the button is hidden until
+   script enables it, so there is never a control that does nothing. */
+.theme-toggle-wrap {
+  flex: 0 0 auto;
+  margin-top: auto;
+  padding: 0.75rem 1rem 1rem;
+}
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.32rem 0.6rem;
+  border: 1px solid var(--iphs-rule);
+  border-radius: 3px;
+  background: transparent;
+  color: #45424b;
+  font: inherit;
+  font-size: 0.73rem;
+  cursor: pointer;
+}
+.theme-toggle:hover { border-color: var(--iphs-accent); color: var(--iphs-accent); }
+.theme-toggle:focus-visible { outline: 2px solid var(--iphs-accent); outline-offset: 2px; }
+
+/* --- semester schedule on the home page --- */
+.week-heading {
+  display: flex;
+  align-items: baseline;
+  gap: 0.55rem;
+  margin: 1.9rem 0 0.5rem !important;
+  font-size: 0.95rem;
+}
+.week-heading > a { text-decoration: none; font-weight: 700; }
+.week-heading-title { font-weight: 400; color: #5c5962; font-size: 0.88rem; }
+.semester-table {
+  width: 100%;
+  margin: 0 0 0.4rem;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+.semester-table th,
+.semester-table td {
+  padding: 0.42rem 0.6rem;
+  border-bottom: 1px solid #f0eef2;
+  text-align: left;
+  vertical-align: top;
+}
+.semester-table th {
+  width: 7.5rem;
+  white-space: nowrap;
+  font-weight: 500;
+  color: #5c5962;
+}
+.semester-table tr:last-child th,
+.semester-table tr:last-child td { border-bottom: 0; }
+.semester-table tr.is-today { background: var(--iphs-accent-soft); }
+.semester-table tr.is-today th { font-weight: 700; color: var(--iphs-accent); }
+.semester-table .due-meta { font-size: 0.75rem; color: #6f6b76; }
+.semester-table .label { margin-right: 0.15rem; }
+
+/* --- top utility bar: external course resources --- */
+.aux-nav {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0.55rem 0 0;
+}
+.aux-nav-list {
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.aux-nav-list > li::before { content: none; }
+.aux-nav-link {
+  font-size: 0.78rem;
+  white-space: nowrap;
+}
+@media (max-width: 50rem) {
+  .aux-nav { justify-content: flex-start; padding-top: 0.75rem; }
+}
+
+/* The theme's .site-footer is positioned for the bottom of the sidebar
+   (position:absolute; left:0; width narrowing to 16.5rem). Ours is the last
+   block of the content column. Overriding the individual properties by
+   specificity proved unreliable across the theme's several .site-footer rules
+   and their breakpoints, so every layout property it sets is reset here
+   explicitly. Appearance is set in the rule above; this block is layout only. */
+footer.site-footer {
+  position: static !important;
+  inset: auto !important;
+  float: none !important;
+  display: block !important;
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  margin: 3rem 0 0 !important;
+  padding: 1rem 0 2rem !important;
 }

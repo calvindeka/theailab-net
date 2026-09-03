@@ -3,14 +3,21 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="This upper-division course is a hands-on study of the AI frontier as it stands in late 2026. That frontier is no longer API plumbing or retrieval…">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Syllabus">
+<meta property="og:description" content="This upper-division course is a hands-on study of the AI frontier as it stands in late 2026. That frontier is no longer API plumbing or retrieval…">
+<meta name="twitter:card" content="summary">
 <title>Syllabus – IPHS 400: Frontiers in AI</title>
+<link rel="icon" href="../images/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/style-dark.css" id="dark-scheme" media="(prefers-color-scheme: dark)">
 </head>
 <body>
 <a class="skip-to-main" href="#main-content">Skip to main content</a>
 <div class="side-bar">
 <header class="site-header">
-<a href="../index.html" class="site-title lh-tight">IPHS 400: Frontiers in AI</a>
+<a href="../index.html" class="site-title lh-tight"><span class="brand-block">IPHS 400</span><span class="brand-title">Frontiers in AI</span></a>
 <span class="site-description">Kenyon College — Fall 2026</span>
 </header>
 <nav class="main-nav" aria-label="Main">
@@ -43,23 +50,27 @@
 <li class="nav-list-item"><a href="../weeks/week-15.html" class="nav-list-link">Week 15</a></li>
 </ul>
 </nav>
+<div class="theme-toggle-wrap">
+<button type="button" class="theme-toggle" id="theme-toggle" aria-pressed="false" hidden>Dark mode</button>
+</div>
 </div>
 <div class="main" id="top">
 <div class="main-content-wrap">
+<nav class="aux-nav" aria-label="External resources"><ul class="aux-nav-list"><li><a href="https://app.datacamp.com/learn/" class="aux-nav-link">DataCamp</a></li></ul></nav>
 <main id="main-content" class="main-content">
 <section class="hero"><h1>Syllabus</h1></section>
 <div class="page-content">
 <h2>Course Details</h2>
 <table>
-<tr><th>Instructor</th><td>Jon Chun</td></tr>
-<tr><th>Department</th><td>Integrated Program for Humane Studies (IPHS)</td></tr>
-<tr><th>Schedule</th><td>Tu/Th, 2:40–4:00 PM</td></tr>
-<tr><th>Location</th><td>Timberlake #5 (Evans Conference Room)</td></tr>
-<tr><th>Office Hours</th><td>Tu/Th, 1:30–2:30 PM, Timberlake #3, and by appointment</td></tr>
-<tr><th>Credit</th><td>4 credits</td></tr>
-<tr><th>CRN</th><td>80653</td></tr>
-<tr><th>Prerequisites</th><td>IPHS 200, COMP 118, or Permission of Instructor (PI)</td></tr>
-<tr><th>Course Site</th><td><code>https://github.com/jon-chun/theailab-net</code> (materials) and Moodle (quizzes, grades, submissions)</td></tr>
+<tr><th scope="row">Instructor</th><td>Jon Chun</td></tr>
+<tr><th scope="row">Department</th><td>Integrated Program for Humane Studies (IPHS)</td></tr>
+<tr><th scope="row">Schedule</th><td>Tu/Th, 2:40–4:00 PM</td></tr>
+<tr><th scope="row">Location</th><td>Timberlake #5 (Evans Conference Room)</td></tr>
+<tr><th scope="row">Office Hours</th><td>Tu/Th, 1:30–2:30 PM, Timberlake #3, and by appointment</td></tr>
+<tr><th scope="row">Credit</th><td>4 credits</td></tr>
+<tr><th scope="row">CRN</th><td>80653</td></tr>
+<tr><th scope="row">Prerequisites</th><td>IPHS 200, COMP 118, or Permission of Instructor (PI)</td></tr>
+<tr><th scope="row">Course Site</th><td><a href="https://github.com/jon-chun/theailab-net"><code>https://github.com/jon-chun/theailab-net</code></a> (materials) and Moodle (quizzes, grades, submissions)</td></tr>
 </table>
 <h2>Course Description</h2>
 <p>This upper-division course is a hands-on study of the AI frontier as it stands in late 2026. That frontier is no longer API plumbing or retrieval pipelines. It is <strong>AI software engineering (AI-SWE): coordinating autonomous coding agents through a professional software development lifecycle (SDLC)</strong>. Over the past year the field has moved away from hand-wired API integrations and hand-assembled RAG stacks (now commodity work, and mostly something the agents can do themselves) and toward <strong>harness engineering</strong> — configuring, extending, and orchestrating AI coding agents such as Claude Code and comparable CLI-native tools so they can carry real engineering work end-to-end.</p>
@@ -90,7 +101,7 @@
 <h3>Required Accounts and Subscriptions</h3>
 <p>Set these up during Week 1 using a <strong>personal (non-@kenyon.edu) email address</strong>, so your accounts and portfolio outlive your Kenyon login:</p>
 <table>
-<tr><th>Account</th><th>Cost</th><th>Purpose</th></tr>
+<tr><th scope="col">Account</th><th scope="col">Cost</th><th scope="col">Purpose</th></tr>
 <tr><td>Personal Google (gmail.com) account</td><td>Free</td><td>Identity for the accounts below</td></tr>
 <tr><td>GitHub account</td><td>Free</td><td>All mini-project repositories and portfolio</td></tr>
 <tr><td>Anthropic.com (Claude) subscription</td><td>$20/mo</td><td>Claude Code CLI and web/desktop app — the course's primary agent</td></tr>
@@ -117,7 +128,7 @@
 <p><strong>Communication:</strong> Email is the best way to reach the instructor outside office hours; expect a response within one business day (longer on weekends). Questions of general interest may be answered to the whole class.</p>
 <h2>Summary of Assignments and Weights</h2>
 <table>
-<tr><th>Assignment</th><th>Weight</th><th>Due</th></tr>
+<tr><th scope="col">Assignment</th><th scope="col">Weight</th><th scope="col">Due</th></tr>
 <tr><td>Class Participation (incl. attendance and lightning presentation)</td><td>20%</td><td>Ongoing</td></tr>
 <tr><td>Weekly Quizzes (lowest two dropped)</td><td>30%</td><td>Weekly, in class</td></tr>
 <tr><td>Mini-Project 1 — Dev Environment (Pass/No-Pass)</td><td>5%</td><td>Fri, Sep 4</td></tr>
@@ -127,13 +138,13 @@
 <tr><td>Final Project proposal (required, ungraded)</td><td>—</td><td>Fri, Nov 13</td></tr>
 <tr><td>Written-exam alternative opt-in deadline</td><td>—</td><td>Fri, Nov 13</td></tr>
 <tr><td>Final Project (poster + code + release form)</td><td>20%</td><td>Exam period, Dec 14–18</td></tr>
-<tr><th>Total</th><th>100%</th><td></td></tr>
+<tr><th scope="row">Total</th><th scope="row">100%</th><td></td></tr>
 </table>
 <p>All submissions go through Moodle, with a link to a GitHub repository that is either <strong>public or privately shared with the instructor</strong> (add the instructor's GitHub account as a collaborator). Repositories must be accessible at the deadline.</p>
 <p>See <a href="assignments.html">Assignments</a> for the full mini-project descriptions, the Final Project requirements, and the Mini-Project 3 &amp; 4 grading rubric. See <a href="policies.html">Policies</a> for the full Generative AI Use Policy, Late/Missing Work Policy, Attendance Policy, Student Work and External Sharing policy, and College statements (Academic Honesty, Accessibility, Title IX, Wellbeing, Copyright).</p>
 <h2>Grading Scale</h2>
 <table>
-<tr><th>Grade</th><th>Percentage</th><th>Description</th></tr>
+<tr><th scope="col">Grade</th><th scope="col">Percentage</th><th scope="col">Description</th></tr>
 <tr><td>A</td><td>90–100%</td><td>Excellent</td></tr>
 <tr><td>B</td><td>80–89%</td><td>Good</td></tr>
 <tr><td>C</td><td>70–79%</td><td>Satisfactory</td></tr>
@@ -145,7 +156,9 @@
 </main>
 <footer class="site-footer">
 <p>IPHS 400: Frontiers in AI · Kenyon College</p>
+<p class="footer-links">Built by <a href="https://github.com/calvindeka">Calvin Deka</a> · <a href="https://github.com/jon-chun/theailab-net">Source repository</a> · <span>Built 2026-09-03</span></p>
 </footer>
+<script src="../js/theme.js" defer></script>
 </div>
 </div>
 </body>

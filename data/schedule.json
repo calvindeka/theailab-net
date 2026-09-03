@@ -1,0 +1,235 @@
+{
+  "course": {
+    "code": "IPHS 400",
+    "title": "Frontiers in AI",
+    "term": "Fall 2026",
+    "institution": "Kenyon College",
+    "meets": "Tu/Th, 2:40\u20134:00 PM",
+    "location": "Timberlake #5 (Evans Conference Room)",
+    "repo": "https://github.com/jon-chun/theailab-net",
+    "site_url": "https://theailab.net",
+    "author": {
+      "name": "Calvin Deka",
+      "github": "https://github.com/calvindeka"
+    },
+    "links": [
+      {
+        "label": "DataCamp",
+        "url": "https://app.datacamp.com/learn/"
+      }
+    ]
+  },
+  "calendar": {
+    "first_class": "2026-08-27",
+    "last_class": "2026-12-11",
+    "october_break": [
+      "2026-10-08",
+      "2026-10-09"
+    ],
+    "thanksgiving_recess": [
+      "2026-11-21",
+      "2026-11-29"
+    ]
+  },
+  "weeks": [
+    {
+      "number": 1,
+      "title": "Course Introduction",
+      "unit": "Mini-Project 1 \u2014 Development Environment Configuration",
+      "sessions": [
+        "2026-08-27"
+      ],
+      "page": "weeks/week-01.html"
+    },
+    {
+      "number": 2,
+      "title": "Shell Fundamentals and Dotfiles",
+      "unit": "Mini-Project 1 \u2014 Development Environment Configuration",
+      "sessions": [
+        "2026-09-01",
+        "2026-09-03"
+      ],
+      "page": "weeks/week-02.html"
+    },
+    {
+      "number": 3,
+      "title": "Anatomy of an AI Coding Agent",
+      "unit": "Mini-Project 2 \u2014 AI Coding Agent Configuration",
+      "sessions": [
+        "2026-09-08",
+        "2026-09-10"
+      ],
+      "page": "weeks/week-03.html"
+    },
+    {
+      "number": 4,
+      "title": "CLAUDE.md and Slash Commands",
+      "unit": "Mini-Project 2 \u2014 AI Coding Agent Configuration",
+      "sessions": [
+        "2026-09-15",
+        "2026-09-17"
+      ],
+      "page": "weeks/week-04.html"
+    },
+    {
+      "number": 5,
+      "title": "Agent Skills, Subagents, and MCP",
+      "unit": "Mini-Project 2 \u2014 AI Coding Agent Configuration",
+      "sessions": [
+        "2026-09-22",
+        "2026-09-24"
+      ],
+      "page": "weeks/week-05.html"
+    },
+    {
+      "number": 6,
+      "title": "Hooks Architecture and Guardrails",
+      "unit": "Mini-Project 3 \u2014 Agent Harness and Hooks",
+      "sessions": [
+        "2026-09-29",
+        "2026-10-01"
+      ],
+      "page": "weeks/week-06.html"
+    },
+    {
+      "number": 7,
+      "title": "Multi-Agent Orchestration Fundamentals",
+      "unit": "Mini-Project 3 \u2014 Agent Harness and Hooks",
+      "sessions": [
+        "2026-10-06"
+      ],
+      "page": "weeks/week-07.html"
+    },
+    {
+      "number": 8,
+      "title": "Comparative Agent Harnesses",
+      "unit": "Mini-Project 3 \u2014 Agent Harness and Hooks",
+      "sessions": [
+        "2026-10-13",
+        "2026-10-15"
+      ],
+      "page": "weeks/week-08.html"
+    },
+    {
+      "number": 9,
+      "title": "Harness Integration and Debugging",
+      "unit": "Mini-Project 3 \u2014 Agent Harness and Hooks",
+      "sessions": [
+        "2026-10-20",
+        "2026-10-22"
+      ],
+      "page": "weeks/week-09.html"
+    },
+    {
+      "number": 10,
+      "title": "MP3 Demos and the Spec-Driven Development Landscape",
+      "unit": "Mini-Project 4 \u2014 SWE/SDLC Best Practices Capstone",
+      "sessions": [
+        "2026-10-27",
+        "2026-10-29"
+      ],
+      "page": "weeks/week-10.html"
+    },
+    {
+      "number": 11,
+      "title": "GitHub as the AI-SDLC Hub",
+      "unit": "Mini-Project 4 \u2014 SWE/SDLC Best Practices Capstone",
+      "sessions": [
+        "2026-11-03",
+        "2026-11-05"
+      ],
+      "page": "weeks/week-11.html"
+    },
+    {
+      "number": 12,
+      "title": "Observability, Cost, and Security",
+      "unit": "Mini-Project 4 \u2014 SWE/SDLC Best Practices Capstone",
+      "sessions": [
+        "2026-11-10",
+        "2026-11-12"
+      ],
+      "page": "weeks/week-12.html"
+    },
+    {
+      "number": 13,
+      "title": "Full-Cycle Capstone Work Session and MP4 Presentations",
+      "unit": "Mini-Project 4 \u2014 SWE/SDLC Best Practices Capstone",
+      "sessions": [
+        "2026-11-17",
+        "2026-11-19"
+      ],
+      "page": "weeks/week-13.html"
+    },
+    {
+      "number": 14,
+      "title": "Final Project Work Session and Poster Development",
+      "unit": "Final Project Development and Presentation",
+      "sessions": [
+        "2026-12-01",
+        "2026-12-03"
+      ],
+      "page": "weeks/week-14.html"
+    },
+    {
+      "number": 15,
+      "title": "Final Project Poster Presentations",
+      "unit": "Final Project Development and Presentation",
+      "sessions": [
+        "2026-12-08",
+        "2026-12-10"
+      ],
+      "page": "weeks/week-15.html"
+    }
+  ],
+  "assignments": [
+    {
+      "id": "mp1",
+      "name": "Mini-Project 1 \u2014 Development Environment",
+      "due": "2026-09-04",
+      "weight": "5%",
+      "grading": "Pass/No-Pass",
+      "page": "core/assignments.html"
+    },
+    {
+      "id": "mp2",
+      "name": "Mini-Project 2 \u2014 Agent + Skills Config",
+      "due": "2026-09-25",
+      "weight": "5%",
+      "grading": "Pass/No-Pass",
+      "page": "core/assignments.html"
+    },
+    {
+      "id": "mp3",
+      "name": "Mini-Project 3 \u2014 Harness + Hooks",
+      "due": "2026-10-23",
+      "weight": "10%",
+      "grading": "graded",
+      "page": "core/assignments.html"
+    },
+    {
+      "id": "mp4",
+      "name": "Mini-Project 4 \u2014 SDLC Capstone",
+      "due": "2026-11-20",
+      "weight": "10%",
+      "grading": "graded",
+      "page": "core/assignments.html"
+    },
+    {
+      "id": "final-proposal",
+      "name": "Final Project proposal",
+      "due": "2026-11-13",
+      "weight": "\u2014",
+      "grading": "required, ungraded",
+      "page": "core/assignments.html"
+    },
+    {
+      "id": "final",
+      "name": "Final Project (poster + code + release form)",
+      "due": "2026-12-18",
+      "weight": "20%",
+      "grading": "graded",
+      "page": "core/assignments.html"
+    }
+  ],
+  "_note": "Single source of truth for the schedule. Week session dates are derived from the Kenyon academic calendar dates in `calendar`. Assignment due dates are stated in one place here and rendered everywhere they appear, so the syllabus, schedule, assignments page and week pages cannot drift apart."
+}
