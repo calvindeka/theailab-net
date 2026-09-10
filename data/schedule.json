@@ -7,7 +7,7 @@
     "meets": "Tu/Th, 2:40\u20134:00 PM",
     "location": "Timberlake #5 (Evans Conference Room)",
     "repo": "https://github.com/jon-chun/theailab-net",
-    "site_url": "https://theailab.net",
+    "site_url": "https://calvindeka.github.io/theailab-net",
     "author": {
       "name": "Calvin Deka",
       "github": "https://github.com/calvindeka"
@@ -184,8 +184,8 @@
   "assignments": [
     {
       "id": "mp1",
-      "name": "Mini-Project 1 \u2014 Development Environment",
-      "due": "2026-09-04",
+      "name": "Mini-Project 1 \u2014 Re-Design a Website with AI",
+      "due": "2026-09-10",
       "weight": "5%",
       "grading": "Pass/No-Pass",
       "page": "core/assignments.html"

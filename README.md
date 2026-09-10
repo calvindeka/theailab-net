@@ -11,6 +11,8 @@ handled separately on Moodle.
 - **Instructor:** Jon Chun
 - **Schedule:** Tu/Th, 2:40–4:00 PM · Timberlake #5 (Evans Conference Room)
 
+> **Live site:** https://calvindeka.github.io/theailab-net/
+>
 > This is a Mini-Project #1 revision of the course site. See
 > [`docs/design-brief.md`](docs/design-brief.md) for the argument behind the
 > changes and [What changed](#what-changed-in-this-revision) below for the summary.
@@ -176,14 +178,20 @@ hand-written HTML.
 tech-spec task 9) and the 218-line generic Python `.gitignore`, replaced with 10
 lines matching what this repo actually produces.
 
-### Known content discrepancy
+### Content discrepancy (resolved by the instructor, not by this revision)
 
 The syllabus, `core/assignments.html`, and `core/schedule.html` all describe
 Mini-Project 1 as *"Development Environment Configuration,"* due Friday, September 4.
 The Mini-Project #1 manual distributed on 2026-09-01 describes it as *"Redesigning a
-Website."* These have not been reconciled here because the correct resolution is the
-instructor's to make. The deadline now lives in one place (`data/schedule.json`), so
-changing it is a one-line edit.
+Website."* The instructor has since clarified that the environment-setup manual is not a
+mini-project and that MP1 is the website redesign, due Thursday, September 10.
+That correction was applied as a single edit to `data/schedule.json`, which updated
+the home page, the schedule and every week page together. The prose on
+`core/assignments.html` and the syllabus is the instructor's and was left as written.
+
+The repository also ships a `.nojekyll` file. GitHub Pages runs Jekyll by default,
+and Jekyll renders Markdown files even without front matter — it would build
+`weeks/week-01.md` into `weeks/week-01.html` and overwrite the generated page.
 
 ## Generative AI Use Statement
 
