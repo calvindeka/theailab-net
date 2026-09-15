@@ -171,10 +171,12 @@ def shell(page: Path, title: str, heading: str, body: str, extra_head: str = "")
 </ul>
 </nav>
 <nav class="week-nav" aria-label="Weekly schedule">
-<p class="nav-category">Weeks</p>
+<details class="week-nav-group" open>
+<summary class="nav-category">Weeks</summary>
 <ul class="nav-list">
 {nav_items(page, WEEK_NAV)}
 </ul>
+</details>
 </nav>
 <div class="theme-toggle-wrap">
 <button type="button" class="theme-toggle" id="theme-toggle" aria-pressed="false" hidden>Dark mode</button>
@@ -194,6 +196,7 @@ def shell(page: Path, title: str, heading: str, body: str, extra_head: str = "")
 <p class="footer-links">Built by <a href="{DATA["course"]["author"]["github"]}">{DATA["course"]["author"]["name"]}</a> · <a href="{repo}">Source repository</a> · <span>Built {dt.date.today().isoformat()}</span></p>
 </footer>
 <script src="{rel(page, 'js/theme.js')}" defer></script>
+<script src="{rel(page, 'js/site.js')}" defer></script>
 </div>
 </div>
 </body>
@@ -274,7 +277,7 @@ def semester_schedule(page: Path, today: dt.date) -> str:
             d = dt.date.fromisoformat(s)
             today_cls = ' class="is-today"' if d == today else ""
             rows.append((d,
-                f'<tr{today_cls}><th scope="row">{d:%a, %b} {d.day}</th>'
+                f'<tr{today_cls} data-date="{s}"><th scope="row">{d:%a, %b} {d.day}</th>'
                 f'<td><span class="label label-blue">CLASS</span> '
                 f'<a href="{rel(page, w["page"])}">{w["title"]}</a></td></tr>'))
         for a, d in deadlines_in_week(w):
@@ -285,9 +288,9 @@ def semester_schedule(page: Path, today: dt.date) -> str:
                 f'<span class="due-meta">{a["weight"]} · {a["grading"]}</span></td></tr>'))
         rows.sort(key=lambda pair: pair[0])
         rows = [html for _, html in rows]
-        here = ' <span class="label label-purple">THIS WEEK</span>' if w is cur else ""
+        here = ' <span class="label label-purple this-week-tag">THIS WEEK</span>' if w is cur else ""
         out.append(
-            f'<h3 class="week-heading" id="week-{w["number"]:02d}">'
+            f'<h3 class="week-heading" id="week-{w["number"]:02d}" data-week="{w["number"]}">'
             f'<a href="{rel(page, w["page"])}">Week {w["number"]}</a>'
             f'<span class="week-heading-title">{w["title"]}</span>{here}</h3>')
         out.append(f'<table class="semester-table"><tbody>{"".join(rows)}</tbody></table>')
@@ -471,6 +474,18 @@ def main() -> None:
             }
             extra = ('\n<script type="application/ld+json">'
                      + json.dumps(ld, indent=1) + "</script>")
+            # The "where we are" panel is rendered at build time, which freezes
+            # "today" at the build date. js/site.js recomputes it from this data
+            # when the page is opened; the built text remains the no-JS fallback.
+            live = {
+                "course": {k: c[k] for k in ("meets", "location")},
+                "weeks": [{k: w[k] for k in ("number", "title", "unit", "sessions", "page")}
+                          for w in DATA["weeks"]],
+                "assignments": DATA.get("assignments", []),
+            }
+            extra += ('\n<script type="application/json" id="schedule-data">'
+                      + json.dumps(live, ensure_ascii=False).replace("</", "<\\/")
+                      + "</script>")
         page.write_text(shell(page, title, heading, body, extra), encoding="utf-8")
 
     write_robots_and_sitemap()

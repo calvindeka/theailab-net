@@ -8305,6 +8305,29 @@ footer.site-footer {
   padding: 1rem 0 2rem !important;
 }
 
+/* --- week list as a disclosure ---
+   Open by default. On narrow screens js/site.js closes it so phone readers
+   reach the page content before 15 week links. The toggle stays clickable at
+   every width: an earlier version disabled it on desktop, so a list folded by
+   a bad width reading could not be reopened. */
+.week-nav-group > summary {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  list-style: none;
+  cursor: pointer;
+}
+.week-nav-group > summary::-webkit-details-marker { display: none; }
+.week-nav-group > summary::after {
+  content: "▸";
+  font-size: 0.7rem;
+  transition: transform 0.15s ease;
+}
+.week-nav-group[open] > summary::after { transform: rotate(90deg); }
+@media (prefers-reduced-motion: reduce) {
+  .week-nav-group > summary::after { transition: none; }
+}
+
 /* ===========================================================================
  *  IPHS 400 CUSTOM LAYER — DARK
  *  Loaded only when the dark colour scheme is active. It overrides the colours
